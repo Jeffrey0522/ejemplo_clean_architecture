@@ -1,0 +1,31 @@
+{
+  "info": {
+    "name": "Clean Architecture - Tasks API",
+    "_postman_id": "a8c2d1a0-55b0-4e67-9e32-000000000001",
+    "description": "Solicitudes básicas para probar la API de tareas.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health check",
+      "request": { "method": "GET", "url": "http://localhost:3000/health" }
+    },
+    {
+      "name": "Crear tarea",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"title\": \"Estudiar Clean Architecture\"\n}" },
+        "url": "http://localhost:3000/api/tasks"
+      }
+    },
+    {
+      "name": "Listar tareas",
+      "request": { "method": "GET", "url": "http://localhost:3000/api/tasks" }
+    },
+    {
+      "name": "Consultar tarea por ID",
+      "request": { "method": "GET", "url": "http://localhost:3000/api/tasks/{{taskId}}" }
+    }
+  ]
+}
